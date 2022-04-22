@@ -81,6 +81,10 @@
                 <v-card-text>
                   <span v-html="selectedEvent.details"></span>
                 </v-card-text>
+                <v-divider></v-divider>
+                <v-card-text>
+                  <span v-html="selectedEvent.location"></span>
+                </v-card-text>
                 <v-card-actions>
                   <v-btn text color="secondary" @click="selectedOpen = false">
                     Schließen
@@ -172,6 +176,7 @@ export default {
             details: element.attributes.Beschreibung,
             start: new Date(element.attributes.start),
             end: new Date(element.attributes.end),
+            location: element.attributes.location,
             color: "blue",
             timed: true,
           });
