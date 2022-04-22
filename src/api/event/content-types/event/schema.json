@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Beschreibung": {
+      "type": "text"
+    },
+    "start": {
+      "type": "datetime"
+    },
+    "end": {
+      "type": "datetime"
+    },
+    "gruppen": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::gruppe.gruppe",
+      "inversedBy": "events"
+    },
+    "location": {
+      "type": "string"
+    }
+  }
+}
